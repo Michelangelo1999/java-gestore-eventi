@@ -1,10 +1,12 @@
 package jana60.gestoreEventi;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Evento {
+
+public class Evento implements Comparable<LocalDate>{
 	
 	//attributi
 	private String titolo;
@@ -143,7 +145,7 @@ public class Evento {
 	
 	
 	//other methods
-	private LocalDate convertiData(String dataInserita) {
+	public LocalDate convertiData(String dataInserita) {
 		Pattern pattern = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
 		Matcher matcher = pattern.matcher(dataInserita);
 		Boolean matchFound = matcher.find();
@@ -190,6 +192,33 @@ public class Evento {
 		return "Evento: " + dataFormatoDate + " - '" + titolo + "' - Posti disponibili: " + (postiTotali-postiPrenotati);
 	}
 	
+//	@Override
+//	public int compareTo(Evento otherEvento) {
+//		
+//		// deve restituire < 0 se this < otherMovie
+//		if(this.convertiData(data).isBefore(otherEvento.convertiData(data))) {
+//			return -1;
+//		}
+//		
+//		//rest = 0 se this = otherMovie
+//		else if(this.data == otherEvento.data) {
+//			return this.titolo.compareTo(otherEvento.titolo);
+//		}
+//		
+//		//rest numero > 0 se this > other movie
+//		else {                             //if(this.annoDIUscita > otherMovie.annoDIUscita)
+//			return 1;
+//		}
+//	}
+
+	@Override
+	public int compareTo(LocalDate date) {
+		if(this.convertiData(data).isAfter(date)) {
+			return 1;
+		} else {
+			return -1;
+		}
+	}
 	
 
 }

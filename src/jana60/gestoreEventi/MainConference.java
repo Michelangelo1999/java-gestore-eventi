@@ -26,13 +26,7 @@ Scanner scan = new Scanner(System.in);
 				String data = scan.nextLine();
 				System.out.println("capienza totale: ");
 				int postiTotali = Integer.parseInt(scan.nextLine());
-				System.out.println("ci sono già dei posti riservati? yes | no");
-				String answer = scan.nextLine();
-				int postiPrenotati = 0;
-				if (answer.equalsIgnoreCase("yes")) {
-					System.out.println("numero posti riservati: ");
-					postiPrenotati = Integer.parseInt(scan.nextLine());
-				}
+				
 				System.out.println("Sarà una conferenza? Yes | no");
 				String answer4 = scan.nextLine();
 				
@@ -71,11 +65,8 @@ Scanner scan = new Scanner(System.in);
 				
 				
 				try {
-					if (answer.equalsIgnoreCase("yes")) {
-						newEvent = new Evento(titolo, data, postiTotali, postiPrenotati);
-					} else {
-						newEvent = new Evento(titolo, data, postiTotali);
-					}
+					newEvent = new Evento(titolo, data, postiTotali);
+					
 				} catch (NullPointerException npe) {
 					System.out.println("Errore: " + npe.getMessage());
 					keepPlanning = true;
