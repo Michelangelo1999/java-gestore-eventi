@@ -46,7 +46,7 @@ public class Evento {
 		this.postiPrenotati = 0;
 	}
 	
-	public Evento(String titolo, String data, int postiTotali, int postiPrenotati) {
+	public Evento(String titolo, String data, int postiTotali, int postiPrenotati) throws NullPointerException, IllegalArgumentException {
 		super();
 		
 		//converto la data inserita
