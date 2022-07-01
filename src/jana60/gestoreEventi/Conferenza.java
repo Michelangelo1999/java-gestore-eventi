@@ -10,7 +10,7 @@ public class Conferenza extends Evento {
 		super();
 		
 		this.argomento = null;
-		this.oratore = new Oratore(null);
+		this.oratore = new Oratore(null, null, null);
 	}
 	
 	public Conferenza(String titolo, String data, int postiTotali, int postiPrenotati, String argomento, Oratore oratore) {

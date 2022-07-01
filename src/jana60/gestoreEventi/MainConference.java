@@ -45,8 +45,10 @@ Scanner scan = new Scanner(System.in);
 					System.out.print("titolo: ");
 					String titoloOratore = scan.nextLine();
 					
-					oratore = new Oratore(nome, cognome, titoloOratore);
 					newEvent = new Conferenza();
+					
+					oratore = new Oratore(nome, cognome, titoloOratore);
+					
 					try {
 						
 							newEvent = new Conferenza(titolo, data, postiTotali, argomento, oratore);
