@@ -29,7 +29,7 @@ public class Conferenza extends Evento {
 	//override
 	@Override
 	public String toString() {
-		return super.toString() + " - " + argomento + "; " + "\n" + oratore;
+		return super.toString() + " - " + argomento + "; " + "\n" + "Oratore: " + oratore;
 	}
 
 }
