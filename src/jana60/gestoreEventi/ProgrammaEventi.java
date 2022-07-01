@@ -2,7 +2,6 @@ package jana60.gestoreEventi;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,16 +15,16 @@ public class ProgrammaEventi {
 		listaEventi.add(new Evento("Conferenza calciomercato Napoli", "2022-08-01", 25));
 		listaEventi.add(new Evento("Prima di campiomato", "2022-08-12", 1000));
 		listaEventi.add(new Evento("Esame meccanica applicata", "2022-09-15", 100));
-		listaEventi.add(new Evento("Discussione progetto basi di dati", "2022-07-27", 100));
 		listaEventi.add(new Evento("Organizzazione viaggio vacanze", "2022-07-27", 4));
 		listaEventi.add(new Evento("Vacanze di natale", "2022-12-20", 10));
+		listaEventi.add(new Evento("Discussione progetto basi di dati", "2022-07-27", 100));
 		
 		System.out.println("lista non ordinata: ");
 		for(Evento e : listaEventi) {
 			System.out.println(e);
 		}
 		
-		//Collections.sort(listaEventi);
+		listaEventi.sort(new EventiCompareByData());
 		
 		System.out.println("lista ordinata: ");
 		for(Evento e : listaEventi) {
