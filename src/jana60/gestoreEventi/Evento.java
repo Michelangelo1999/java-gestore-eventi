@@ -76,6 +76,13 @@ public class Evento {
 		this.postiTotali = postiTotali;
 		this.postiPrenotati = postiPrenotati;
 	}
+	
+	public Evento() {
+		this.titolo = null;
+		this.data = null;
+		this.postiTotali = 0;
+		this.postiPrenotati = 0;
+	}
     
 	
 	
